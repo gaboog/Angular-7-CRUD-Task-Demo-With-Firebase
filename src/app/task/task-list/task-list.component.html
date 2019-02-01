@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-6">
+    <h4>Task List</h4>
+  </div>
+  <div class="col-6" style="text-align: right">
+    <button class="btn btn-primary " (click)="clickAddTask()">Add Task</button>
+  </div>
+</div>
+
+
+
+<table class="table table-striped" *ngIf="tasks && tasks.length > 0">
+  <thead>
+  <tr>
+    <th>Done</th>
+    <th>Title</th>
+    <th>Created Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let task of tasks, let index = index">
+    <td><input type="checkbox" [checked]="task.done" (change)="checkedDone(index)" /></td>
+    <td [ngClass]="{'done': task.done, 'not-done': !task.done}">{{task.title}}</td>
+    <td>{{task.lastModifiedDate | date}}</td>
+    <td>
+      <button class="btn btn-primary" (click)="handleEditClick(task)">Edit</button>
+      <button class="btn btn-danger" (click)="handleDeleteClick(task.id, index)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
