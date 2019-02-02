@@ -32,7 +32,7 @@ export class TaskListComponent implements OnInit {
             title: data.title,
             description: data.description,
             done: data.done,
-            // createdDate: data.createdDate,
+            createdDate: data.createdDate,
             lastModifiedDate: data.lastModifiedDate.toDate()
           };
           this.tasks.push(task);

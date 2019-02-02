@@ -7,20 +7,20 @@
 <div class="modal-body">
   <form [formGroup]="taskForm" (ngSubmit)="saveTask()">
     <div class="form-group">
-      <label for="title">Title*</label>
+      <!--<label for="title">Title*</label>-->
       <input type="text" id="title" placeholder="Title" class="form-control" formControlName="title" />
       <span style="color:Red;" *ngIf="taskForm.controls['title'].touched && taskForm.controls['title'].errors?.required">Title
         is required.</span>
     </div>
     <div class="form-group">
-      <label for="description">Description*</label>
+      <!--<label for="description">Description*</label>-->
       <textarea  id="description" placeholder="Description" class="form-control" formControlName="description"></textarea>
       <span style="color:Red;" *ngIf="taskForm.controls['description'].touched && taskForm.controls['description'].errors?.required">Description
         is required.</span>
     </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="done" formControlName="done">
+    <div class="checkbox-custom checkbox-inline">
       <label class="form-check-label" for="done">
+        <input class="form-check-input" type="checkbox" value="" id="done" formControlName="done">
         Done
       </label>
     </div>
